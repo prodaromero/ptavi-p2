@@ -9,7 +9,10 @@ class Calcoohija(calcoo.Calculadora):
 	def multiplicacion(self, op1, op2):
 		return op1 * op2
 	def division(slef, op1, op2):
-		return op1 / op2
+		if op2 == 0:
+			return('No se puede dividir entre 0')
+		else:
+			return op1 / op2
 
 if __name__ == "__main__":
 	try:
