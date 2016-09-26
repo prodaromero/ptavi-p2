@@ -5,15 +5,14 @@ import sys
 import calcoo
 import calcoohija
 
-fichero = open('Operaciones', 'r')
-
-lineas = fichero.readlines()
-
-primera_linea = lineas
 
 calculadora = calcoohija.Calcoohija()
 
 if __name__ == "__main__":
+	try:
+		fichero = open('Operaciones', 'r')
+	except:
+		sys.exit("Error: file not found")
 
 	for linea in lineas:
 		elementos = linea.split(',')
