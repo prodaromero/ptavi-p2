@@ -7,11 +7,12 @@ import calcoo
 import calcoohija
 
 
-calculadora = calcoohija.Calcoohija()
-
-argumento = sys.argv[1]
-
 if __name__ == "__main__":
+
+    calculadora = calcoohija.Calcoohija()
+
+    argumento = sys.argv[1]
+
     try:
         fichero = open(argumento, 'r')
     except:
