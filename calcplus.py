@@ -9,16 +9,30 @@ fichero = open('Operaciones', 'r')
 
 lineas = fichero.readlines()
 
-primera_linea = lineas[0]
+primera_linea = lineas
 
 calculadora = calcoohija.Calcoohija()
 
-for linea in lineas:
-	elems = linea.split(',')
+if __name__ == "__main__":
 
-	if elems[0] == "suma":
-		result = int(elems[1])
-		for result in elems[:-1]:
-			result = calculadora.suma(result, int(elems[:-1]))
+	for linea in lineas:
+		elementos = linea.split(',')
+		operador = elementos[0]
+		operando1 = int(elementos[1])
+		operandos = elementos[2:]
+		result = operando1
 
-	print(result)
+		if operador == "suma":
+			for operando in operandos:
+				result = calculadora.suma(result, int(operando))
+		if operador == "resta":
+			for operando in operandos:
+				result = calculadora.resta(result, int(operando))
+		if operador == "multiplica":
+			for operando in operandos:
+				result = calculadora.multiplicacion(result, int(operando))
+		if operador == "divide":
+			for operando in operandos:
+				result = calculadora.division(result, int(operando))
+			
+		print(result)
